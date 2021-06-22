@@ -2,6 +2,9 @@
   <% @tweets.each do |tweet| %>
     <div class='content_post' >
       <p><%= tweet.text %></p>
+      <% if tweet.image.attached?%>
+        <%= image_tag tweet.image.variant(resize: '500x500'), class: 'tweet-image' %>
+      <% end %>
       <span class='name'>
         <%= tweet.name %>
       </span>
